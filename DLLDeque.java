@@ -8,8 +8,8 @@ public class DLLDeque<T> implements Deque<T>{
 	_size = 0;
     }
 
-    public void addFirst(T t){
-      DLLNode<T> newNode = new DLLNode<T>(t, null, null);
+    public void addFirst(T newVal){
+      DLLNode<T> newNode = new DLLNode<T>(newVal, null, null);
       if (isEmpty()){
         _front = _end = newNode;
       }
@@ -30,7 +30,7 @@ public class DLLDeque<T> implements Deque<T>{
       }
     }
 
-    public T getFront(){
+    public T getFirst(){
       return _front.getCargo();
     }
 
