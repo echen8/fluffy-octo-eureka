@@ -7,6 +7,7 @@ public interface Deque<T>{
     //public T removeFirst();
     //public T removeLast();
     //public int size();
+    //public boolean isEmpty();
 
     // Methods for FIFO behavior
     //public void add( T t );
