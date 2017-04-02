@@ -9,7 +9,7 @@ public class DLLDeque<T> implements Deque<T>{
     }
 
     public void addFirst(T newVal){
-      DLLNode<T> newNode = new DLLNode<T>(newVal, null, null);
+      DLLNode<T> newNode = new DLLNode<T>(newVal, null, _front);
       if (isEmpty()){
         _front = _end = newNode;
       }
@@ -20,7 +20,7 @@ public class DLLDeque<T> implements Deque<T>{
     }
 
     public void addLast(T t){
-      DLLNode<T> newNode =  new DLLNode<T>(t, null, null);
+      DLLNode<T> newNode =  new DLLNode<T>(t, _end, null);
       if (isEmpty()){
         _front = _end = newNode;
       }
@@ -50,6 +50,7 @@ public class DLLDeque<T> implements Deque<T>{
     public T removeLast(){
       T retVal = _end.getCargo();
       _end = _end.getPrev();
+      if( _end == null ){ _front = null; }
       return retVal;
     }
 
@@ -61,5 +62,10 @@ public class DLLDeque<T> implements Deque<T>{
       return _size;
     }
 
+    public static void main( String[] args ){
+        //test cases.. where are they
+        //incremental development... where is it
+        //we're sorry mr. brown... :(
+    }
     
 }
