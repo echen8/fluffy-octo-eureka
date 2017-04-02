@@ -11,13 +11,13 @@ An implementation of Deque (a double ended queue) that uses doubly linked nodes
 	* `T removeFirst()`
 	* `T removeLast()`
 * FIFO behaving methods
-	* `void add( T t )`
-    * `T remove()`
+	* `void add( T t )` -> Equivalent to `void addLast( T t )` 
+    * `T remove()` -> Equivalent to `T removeFirst()`
 * FILO behaving methods
-	* `void push( T t )`
-	* `T pop()`
+	* `void push( T t )` -> Equivalent to `void addFirst( T t )`
+	* `T pop()` -> Equivalent to `T removeFirst()`
 * FIFO/FILO behaving methods
-	* `T peek()`
+	* `T peek()` -> Equivalent to `T getFirst()`
 
 We chose these methods because we wanted implementations of Deque to be able to behave as double ended quques, first in first out, or first in last out data structures.
 
