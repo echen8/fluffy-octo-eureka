@@ -30,7 +30,36 @@ public class DLLDeque<T> implements Deque<T>{
       }
     }
 
+    public T getFront(){
+      return _front.getCargo();
+    }
+
+    public T getLast(){
+      return _end.getCargo();
+    }
+
+    public T removeFirst(){
+      T retVal = _front.getCargo();
+      _front = _front.getNext();
+      if (_front == null){
+        _end = null;
+      }
+      return retVal;
+    }
+
+    public T removeLast(){
+      T retVal = _end.getCargo();
+      _end = _end.getPrev();
+      return retVal;
+    }
+
     public boolean isEmpty(){
       return _size == 0;
     }
+
+    public int size(){
+      return _size;
+    }
+
+    
 }
