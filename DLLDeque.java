@@ -61,6 +61,28 @@ public class DLLDeque<T> implements Deque<T>{
       return retVal;
     }
 
+    //FIFO
+    public void add(T t){
+	addLast(t);
+    }
+
+    public T remove(){
+	return removeFirst();
+    }
+
+    //FILO
+    public void push(T t){
+	addFirst(t);
+    }
+
+    public T pop(){
+	return removeFirst();
+    }
+
+    public T peek(){
+	return getFirst();
+    }
+
     public boolean isEmpty(){
       return _size == 0;
     }
@@ -104,6 +126,7 @@ public class DLLDeque<T> implements Deque<T>{
         System.out.println( "Removed from last: " + test.removeLast() );
         System.out.println( test );
 
-
+        
+	
     }
 }
