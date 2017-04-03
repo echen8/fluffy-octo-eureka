@@ -11,7 +11,7 @@ public interface Deque<T>{
 
     // Methods for FIFO behavior
     public void add( T t );
-    public T remove( T t );
+    public T remove();
 
     // Methods for FILO behavior
     public void push( T t );
