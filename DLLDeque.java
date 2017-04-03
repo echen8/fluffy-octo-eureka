@@ -55,6 +55,7 @@ public class DLLDeque<T> implements Deque<T>{
     public T removeLast(){
       T retVal = _end.getCargo();
       _end = _end.getPrev();
+      _end.setNext( null );
       if( _end == null ){ _front = null; }
       _size--;
       return retVal;
@@ -96,10 +97,11 @@ public class DLLDeque<T> implements Deque<T>{
         System.out.println( test );
         //Output: =====FRONT, bob, dog, test, bob, dog, test, END=====
 
-        //System.out.println( "Removed from last: " + test.removeLast() );
-        //System.out.println( "Removed from last: " + test.removeLast() );
         System.out.println( "Removed from first: " + test.removeFirst() );
         System.out.println( "Removed from first: " + test.removeFirst() );
+        System.out.println( test );
+        //System.out.println( "Removed from last: " + test.removeLast() );
+        System.out.println( "Removed from last: " + test.removeLast() );
         System.out.println( test );
 
 
