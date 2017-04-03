@@ -67,26 +67,39 @@ public class DLLDeque<T> implements Deque<T>{
     }
 
     public String toString(){
-        String retStr = "=====FRONT, ";
+        String retStr = "=====FRONT=====\n";
         DLLNode<T> ptr = _front;
         while( ptr != null ){
-            retStr += ptr.toString() + ", ";
+            //retStr += ptr.toString() + ", ";
+            retStr += "Node cargo:\t" + ptr.toString() + "\tPrev:\t" + ptr.getPrev() + "\tNext:\t" + ptr.getNext() + "\n";
             ptr = ptr.getNext();
         }
-        retStr += "END=====";
+        retStr += "=====END=====";
         return retStr;
     }
 
     public static void main( String[] args ){
-        DLLDeque<String> test = new DLLDeque<String>();
+        DLLDeque<String> test;
 
+        test = new DLLDeque<String>();
         test.addLast( "bob" );
         test.addLast( "dog" );
         test.addLast( "test" );
         System.out.println( test );
-        //test cases.. where are they
-        //incremental development... where is it
-        //we're sorry mr. brown... :(
+        //Output: =====FRONT, bob, dog, test, END=====
+
+        test.addFirst( "jake" );
+        test.addFirst( "alan" );
+        test.addFirst( "nodes" );
+        System.out.println( test );
+        //Output: =====FRONT, bob, dog, test, bob, dog, test, END=====
+
+        System.out.println( "Removed from last: " + test.removeLast() );
+        System.out.println( test );
+        //System.out.println( "Removed from last: " + test.removeLast() );
+        //System.out.println( "Removed from first: " + test.removeFirst() );
+        //System.out.println( "Removed from first: " + test.removeFirst() );
+
+
     }
-    
 }
