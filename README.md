@@ -1,3 +1,9 @@
+## Team fluffy-octo-eureka
+Members:
+* Arif Roktim
+* Tim Wang
+* Allan Wang
+
 # Deque
 An implementation of Deque (a double ended queue) that uses doubly linked nodes
 
@@ -37,9 +43,3 @@ The alternative of using an Array(List) for our underlying datastructure isn't a
 | removeLast()      | O(1) | O(n) |
 
 Array(List)s have the advantage of having an O(1) runtime for accessing arbritrary indexes, but this isn't much of an advantage as stated earlier.
-
-## Team fluffy-octo-eureka
-Members:
-* Arif Roktim
-* Tim Wang
-* Allan Wang
