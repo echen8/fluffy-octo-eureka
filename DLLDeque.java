@@ -17,6 +17,7 @@ public class DLLDeque<T> implements Deque<T>{
         _front.setPrev(newNode);
         _front = _front.getPrev();
       }
+      _size++;
     }
 
     public void addLast(T t){
@@ -28,6 +29,7 @@ public class DLLDeque<T> implements Deque<T>{
         _end.setNext(newNode);
         _end = _end.getNext();
       }
+      _size++;
     }
 
     public T getFirst(){
@@ -44,6 +46,7 @@ public class DLLDeque<T> implements Deque<T>{
       if (_front == null){
         _end = null;
       }
+      _size--;
       return retVal;
     }
 
@@ -51,6 +54,7 @@ public class DLLDeque<T> implements Deque<T>{
       T retVal = _end.getCargo();
       _end = _end.getPrev();
       if( _end == null ){ _front = null; }
+      _size--;
       return retVal;
     }
 
@@ -62,7 +66,24 @@ public class DLLDeque<T> implements Deque<T>{
       return _size;
     }
 
+    public String toString(){
+        String retStr = "=====FRONT, ";
+        DLLNode<T> ptr = _front;
+        while( ptr != null ){
+            retStr += ptr.toString() + ", ";
+            ptr = ptr.getNext();
+        }
+        retStr += "END=====";
+        return retStr;
+    }
+
     public static void main( String[] args ){
+        DLLDeque<String> test = new DLLDeque<String>();
+
+        test.addLast( "bob" );
+        test.addLast( "dog" );
+        test.addLast( "test" );
+        System.out.println( test );
         //test cases.. where are they
         //incremental development... where is it
         //we're sorry mr. brown... :(
