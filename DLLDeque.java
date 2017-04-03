@@ -45,6 +45,8 @@ public class DLLDeque<T> implements Deque<T>{
       _front = _front.getNext();
       if (_front == null){
         _end = null;
+      } else {
+          _front.setPrev( null );
       }
       _size--;
       return retVal;
@@ -94,11 +96,11 @@ public class DLLDeque<T> implements Deque<T>{
         System.out.println( test );
         //Output: =====FRONT, bob, dog, test, bob, dog, test, END=====
 
-        System.out.println( "Removed from last: " + test.removeLast() );
-        System.out.println( test );
         //System.out.println( "Removed from last: " + test.removeLast() );
-        //System.out.println( "Removed from first: " + test.removeFirst() );
-        //System.out.println( "Removed from first: " + test.removeFirst() );
+        //System.out.println( "Removed from last: " + test.removeLast() );
+        System.out.println( "Removed from first: " + test.removeFirst() );
+        System.out.println( "Removed from first: " + test.removeFirst() );
+        System.out.println( test );
 
 
     }
