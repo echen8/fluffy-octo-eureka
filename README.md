@@ -5,7 +5,7 @@ Members:
 * Allan Wang
 
 # Deque
-An implementation of Deque (a double ended queue) that uses doubly linked nodes
+An implementation of Deque (a double ended queue) that uses doubly linked nodes. Compile and run DLLDeque.java
 
 ## Method Selection
 * `int size()`

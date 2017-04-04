@@ -92,41 +92,62 @@ public class DLLDeque<T> implements Deque<T>{
     }
 
     public String toString(){
-        String retStr = "=====FRONT=====\n";
+        String retStr = "=====FRONT, ";
         DLLNode<T> ptr = _front;
         while( ptr != null ){
-            //retStr += ptr.toString() + ", ";
-            retStr += "Node cargo:\t" + ptr.toString() + "\tPrev:\t" + ptr.getPrev() + "\tNext:\t" + ptr.getNext() + "\n";
+            retStr += ptr.toString() + ", ";
             ptr = ptr.getNext();
         }
-        retStr += "=====END=====";
+        retStr += "END=====";
         return retStr;
     }
 
     public static void main( String[] args ){
         DLLDeque<String> test;
 
+        System.out.println( "==========Testing as a Deque==========\nAdding to end: bob, dog, test" );
         test = new DLLDeque<String>();
         test.addLast( "bob" );
         test.addLast( "dog" );
         test.addLast( "test" );
         System.out.println( test );
-        //Output: =====FRONT, bob, dog, test, END=====
 
+        System.out.println( "Adding to beginning: jake, alan, nodes" );
         test.addFirst( "jake" );
         test.addFirst( "alan" );
         test.addFirst( "nodes" );
         System.out.println( test );
-        //Output: =====FRONT, bob, dog, test, bob, dog, test, END=====
 
         System.out.println( "Removed from first: " + test.removeFirst() );
         System.out.println( "Removed from first: " + test.removeFirst() );
         System.out.println( test );
-        //System.out.println( "Removed from last: " + test.removeLast() );
+        System.out.println( "Removed from last: " + test.removeLast() );
         System.out.println( "Removed from last: " + test.removeLast() );
         System.out.println( test );
 
-        
+
+        System.out.println( "\n==========Testing as a FILO============\nPushed: bob, dog, test" );
+        test = new DLLDeque<String>();
+        test.push( "bob" );
+        test.push( "dog" );
+        test.push( "test" );
+        System.out.println( test + "\nPopping..." );
+        while( ! test.isEmpty() ){
+            System.out.println( "Popped: " + test.pop() );
+        }
+	
+        System.out.println( "\n==========Testing as a FIFO============\nAdded: bob, dog, test" );
+        test = new DLLDeque<String>();
+        test.add( "bob" );
+        test.add( "dog" );
+        test.add( "test" );
+        System.out.println( test + "\nRemoving..." );
+        while( ! test.isEmpty() ){
+            System.out.println( "Removed: " + test.remove() );
+        }
+
+        System.out.println( "\nThrow in an exception just for the lulz" );
+        test.remove();
 	
     }
 }
