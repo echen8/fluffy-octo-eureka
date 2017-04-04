@@ -9,6 +9,7 @@ An implementation of Deque (a double ended queue) that uses doubly linked nodes
 
 ## Method Selection
 * `int size()`
+* `boolean isEmpty()`
 * Deque behaving methods
 	* `void addFirst( T t )`
 	* `void addLast( T t )`
